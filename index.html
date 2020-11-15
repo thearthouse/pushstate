@@ -87,10 +87,10 @@
 			<div style="float: right; margin-top: -29px;"><a href="http://twitter.com/share" class="twitter-share-button" data-url="http://html5.gingerhost.com/" data-text="An example of history.pushState() in use:" data-count="vertical" data-via="RobOusbey">Tweet</a><script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script></div>
 			
             <ul id="menu" class="clearfix"> 
-                <li class="current"><a href="/">Home</a></li>
-                <li><a href="/seattle">Seattle</a></li>
-                <li><a href="/new-york">New York</a></li>
-                <li><a href="/london">London</a></li>
+                <li class="current"><a href="/pushstate/">Home</a></li>
+                <li><a href="/pushstate/seattle">Seattle</a></li>
+                <li><a href="/pushstate/new-york">New York</a></li>
+                <li><a href="/pushstate/london">London</a></li>
             </ul>
             <br class="clear" />
         </nav>
@@ -155,40 +155,6 @@
     <div class="clear"></div>
 
 </div> <!-- end wrapper -->
-
-<script type="text/javascript">
-  $(document).ready(function(){
-
-	$(".ie").load("http://html5.gingerhost.com/js/ie.html"); // Load the IE warning into a div with a class of ie
-	
-	// Contact form
-	$("form#contactform").submit(function() {
-		
-		//Setup any needed variables
-		var input_name = $('#name').val(),
-		input_email    = $('#email').val(),
-		input_subject  = $('#subject').val(),
-		input_message  = $('#message').val(),
-		response_text  = $('#response');
-		
-		//Hide any previous response text
-		response_text.hide();
-
-		//Change response text to 'loading...'
-		response_text.html('Loading...').show();
-
-		//Make AJAX request
-		$.post('sendmail.php', {name: input_name, email: input_email, subject: input_subject, message: input_message}, function(data){
-			response_text.html(data);
-		});
-
-		//Cancel default action
-		return false;
-		
-	});
-	
-});
-  </script>
 
 </body>
 </html>
